@@ -36,11 +36,16 @@
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="{{ navSetActive('blog.home') }}"><a href="{{ URL::route('blog.home') }}">Home</a></li>
-                        <li class="{{ navSetActive('blog.archive') }}"><a href="{{ URL::route('blog.archive') }}">Archive</a></li>
-                        <li class="jump-to-author"><a href="#sidebar">About the Author</a></li>
-                    </ul>
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'primary_menu',
+                        'container' => false,
+                        'menu_class' => 'nav navbar-nav'
+                    )); ?>
+<!--                    <ul class="nav navbar-nav">-->
+<!--                        <li class="{{ navSetActive('blog.home') }}"><a href="{{ URL::route('blog.home') }}">Home</a></li>-->
+<!--                        <li class="{{ navSetActive('blog.archive') }}"><a href="{{ URL::route('blog.archive') }}">Archive</a></li>-->
+<!--                        <li class="jump-to-author"><a href="#sidebar">About the Author</a></li>-->
+<!--                    </ul>-->
                     <form method="get" role="search" action="<?php echo home_url(); ?>"
                           class="navbar-form navbar-right search-form">
                         <div class="form-group">

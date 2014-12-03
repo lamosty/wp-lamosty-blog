@@ -6,6 +6,10 @@
 function lamosty_setup() {
     load_theme_textdomain('lamosty-blog', get_template_directory() . '/languages');
 
+    register_nav_menus(array(
+        'primary_menu' => 'Primary Menu',
+        'user_menu' => 'User Menu'
+    ));
 }
 
 add_action('after_setup_theme', 'lamosty_setup');
