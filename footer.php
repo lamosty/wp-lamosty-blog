@@ -4,7 +4,6 @@
  */
 
 ?>
-                </main>
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div>

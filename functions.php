@@ -12,6 +12,11 @@ function lamosty_setup() {
         'secondary_logged_in' => 'Secondary Menu — Logged In'
     ));
 
+    register_sidebar(array(
+        'name' => __('Main Sidebar', 'lamosty-blog'),
+        'id' => 'main-sidebar'
+    ));
+
     add_theme_support('custom-header', array(
         'default-image' => get_template_directory_uri() . '/images/logo.png',
         'width' => 40,
