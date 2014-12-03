@@ -21,6 +21,10 @@ html, body {
 
   .navbar-brand {
     padding: 5px 15px;
+
+    &> img {
+      display: inline;
+    }
   }
 
   .jump-to-author {
@@ -78,7 +82,7 @@ html, body {
     }
   }
 
-  .navbar-nav > .active > a {
+  .navbar-nav > .current-menu-item > a {
     @extend %hover-bg;
 
     &:hover {

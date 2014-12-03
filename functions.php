@@ -10,6 +10,12 @@ function lamosty_setup() {
         'primary_menu' => 'Primary Menu',
         'user_menu' => 'User Menu'
     ));
+
+    add_theme_support('custom-header', array(
+        'default-image' => get_template_directory_uri() . '/images/logo.png',
+        'width' => 40,
+        'height' => 40
+    ));
 }
 
 add_action('after_setup_theme', 'lamosty_setup');

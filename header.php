@@ -30,9 +30,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ URL::route('blog.home') }}">
-                        <img alt="Lamosty's Blog" src="{{ URL::asset('images/logo.png') }}" width="40" height="40">
-                        Lamosty's Blog
+                    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+                        <img alt="Lamosty's Blog" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>"
+                             height="<?php echo get_custom_header()->height; ?>">
+                        <?php echo lamosty_format_translated_site_title(); ?>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -41,11 +42,6 @@
                         'container' => false,
                         'menu_class' => 'nav navbar-nav'
                     )); ?>
-<!--                    <ul class="nav navbar-nav">-->
-<!--                        <li class="{{ navSetActive('blog.home') }}"><a href="{{ URL::route('blog.home') }}">Home</a></li>-->
-<!--                        <li class="{{ navSetActive('blog.archive') }}"><a href="{{ URL::route('blog.archive') }}">Archive</a></li>-->
-<!--                        <li class="jump-to-author"><a href="#sidebar">About the Author</a></li>-->
-<!--                    </ul>-->
                     <form method="get" role="search" action="<?php echo home_url(); ?>"
                           class="navbar-form navbar-right search-form">
                         <div class="form-group">
