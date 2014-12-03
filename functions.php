@@ -47,8 +47,9 @@ function lamosty_register_scripts_styles() {
         'jquery'
     ), '3', true);
 
-    wp_enqueue_style('twitter-bootstrap');
-    wp_enqueue_style('main-css', $theme_dir_uri . '/style.css');
+    wp_enqueue_style('main-css', $theme_dir_uri . '/style.css', array(
+        'twitter-bootstrap'
+    ));
 
     wp_enqueue_script('twitter-bootstrap');
 }

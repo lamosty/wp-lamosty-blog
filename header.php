@@ -41,31 +41,29 @@
                         <li class="{{ navSetActive('blog.archive') }}"><a href="{{ URL::route('blog.archive') }}">Archive</a></li>
                         <li class="jump-to-author"><a href="#sidebar">About the Author</a></li>
                     </ul>
-                    {{ Form::open(array('route' => 'blog.get_new_search', 'role' => 'search',
-                    'class' => 'navbar-form navbar-right search-form', 'method' => 'get')) }}
-                    <div class="form-group">
-                        {{ Form::text('search-term', null, array('class' => 'form-control search-input', 'placeholder' => 'Search')) }}
-                    </div>
-                    <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                    {{ Form::close() }}
+                    <form method="get" role="search" action="<?php echo home_url(); ?>"
+                          class="navbar-form navbar-right search-form">
+                        <div class="form-group">
+                            <input class="form-control search-input" placeholder="Search" name="s" type="text"
+                                value="<?php echo get_search_query(); ?>">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
                     <ul class="nav navbar-nav navbar-right">
-                        @if(Auth::check())
                         <li class="{{ navSetActive('blog.new_post') }}">
                             <a href="{{ URL::route('blog.new_post') }}">New Post</a>
                         </li>
                         <li class="{{ navSetActive('user.logout') }}">
                             <a href="{{ URL::route('user.logout') }}">Logout</a>
                         </li>
-                        @else
                         <li class="{{ navSetActive('user.create') }}">
                             <a href="{{ URL::route('user.create') }}">Register</a>
                         </li>
                         <li class="{{ navSetActive('user.login') }}">
                             <a href="{{ URL::route('user.login') }}">Login</a>
                         </li>
-                        @endif
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
