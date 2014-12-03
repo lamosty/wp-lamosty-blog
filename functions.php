@@ -5,6 +5,7 @@
 
 function lamosty_setup() {
     load_theme_textdomain('lamosty-blog', get_template_directory() . '/languages');
+
 }
 
 add_action('after_setup_theme', 'lamosty_setup');
@@ -34,3 +35,23 @@ function lamosty_do_title($title) {
 }
 
 add_filter('wp_title', 'lamosty_do_title');
+
+function lamosty_register_scripts_styles() {
+    $theme_dir_uri = get_template_directory_uri();
+
+    /**
+     * Register Twitter Bootstrap 3
+     */
+    wp_register_style('twitter-bootstrap', $theme_dir_uri . '/bootstrap/css/bootstrap.min.css', array(), '3');
+    wp_register_script('twitter-bootstrap', $theme_dir_uri . '/bootstrap/js/bootstrap.min.js', array(
+        'jquery'
+    ), '3', true);
+
+    wp_enqueue_style('twitter-bootstrap');
+    wp_enqueue_style('main-css', $theme_dir_uri . '/style.css');
+
+    wp_enqueue_script('twitter-bootstrap');
+}
+
+add_action('wp_enqueue_scripts', 'lamosty_register_scripts_styles');
+
