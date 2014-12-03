@@ -1,0 +1,170 @@
+@import 'base';
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+#blog-main {
+  padding-bottom: 100px;
+
+  .pagination {
+    margin: 40px 0;
+  }
+}
+
+.navbar {
+  border-radius: 0;
+
+  .navbar-brand {
+    padding: 5px 15px;
+  }
+
+  .jump-to-author {
+    display: none;
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    .search-form {
+      position: relative;
+
+      .form-group {
+        display: block;
+        vertical-align: baseline;
+
+        input.search-input {
+          position: absolute;
+          top: 0;
+          left: -166px;
+          z-index: 100;
+          display: none;
+        }
+      }
+
+      &:hover {
+        input.search-input {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .search-form {
+      .btn-default {
+        width: 100%;
+      }
+    }
+
+    .jump-to-author {
+      display: block;
+    }
+  }
+}
+
+%hover-bg {
+  background-color: #777;
+}
+
+.navbar-inverse {
+  .navbar-nav > li > a, .navbar-brand {
+    color: #fff;
+
+    &:hover {
+      color: #777;
+    }
+  }
+
+  .navbar-nav > .active > a {
+    @extend %hover-bg;
+
+    &:hover {
+      @extend %hover-bg;
+    }
+
+    &:focus {
+      @extend %hover-bg;
+    }
+  }
+}
+
+.blog-post {
+  .blog-post-title {
+    a {
+      @include unstyled-link;
+      @include link-colors($title-link, $title-link-hover);
+    }
+
+  }
+
+  .excerpt {
+    margin-bottom: 10px;
+  }
+
+  img.alignnone {
+    display: block;
+    margin: 20px auto;
+  }
+
+
+  .read-more-btn {
+    display: block;
+    width: 15%;
+    min-width: 113px;
+    margin-top: 15px;
+  }
+
+  #comments-counter {
+    margin-top: 60px;
+  }
+
+  .comments {
+    margin-top: 20px;
+  }
+
+  .comment {
+    margin-bottom: 20px;
+  }
+
+  .comment-content {
+    margin: 8px;
+  }
+}
+
+.blog-sidebar {
+
+  .sidebar-block {
+    margin: 20px 0;
+
+    .image-wrapper {
+      display: block;
+      text-align: center;
+    }
+
+    &.identity {
+      h5 {
+        text-align: center;
+        margin: 20px 0;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 30px;
+    margin-top: 50px;
+    background-color: $nav-bg-gray;
+    border-top: 1px solid $nav-border-gray;
+  }
+}
+
+#footer {
+  background-color: $nav-bg-gray;
+  margin-top: -70px;
+  border-top: 1px solid $nav-border-gray;
+  padding: 10px 0;
+  min-height: 70px;
+}
+

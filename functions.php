@@ -46,15 +46,17 @@ function lamosty_register_scripts_styles() {
     /**
      * Register Twitter Bootstrap 3
      */
-    wp_register_style('twitter-bootstrap', $theme_dir_uri . '/bootstrap/css/bootstrap.min.css', array(), '3');
-    wp_register_script('twitter-bootstrap', $theme_dir_uri . '/bootstrap/js/bootstrap.min.js', array(
+    wp_register_style('twitter-bootstrap', $theme_dir_uri . '/dist/css/bootstrap.min.css', array(), '3');
+    wp_register_script('twitter-bootstrap', $theme_dir_uri . '/dist/js/bootstrap.min.js', array(
         'jquery'
     ), '3', true);
 
-    wp_enqueue_style('main-css', $theme_dir_uri . '/style.css', array(
+    /**
+     * Enqueue Twitter Bootstrap 3
+     */
+    wp_enqueue_style('lamosty-theme-style', $theme_dir_uri . '/dist/css/theme-style.css', array(
         'twitter-bootstrap'
     ));
-
     wp_enqueue_script('twitter-bootstrap');
 }
 

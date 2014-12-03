@@ -1,0 +1,12 @@
+{
+  "name": "lamosty-blog",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Rastislav Lamos",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-sass": "^1.1.0"
+  }
+}
