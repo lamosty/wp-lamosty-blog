@@ -8,7 +8,8 @@ function lamosty_setup() {
 
     register_nav_menus(array(
         'primary_menu' => 'Primary Menu',
-        'user_menu' => 'User Menu'
+        'secondary_logged_out' => 'Secondary Menu — Logged Out',
+        'secondary_logged_in' => 'Secondary Menu — Logged In'
     ));
 
     add_theme_support('custom-header', array(

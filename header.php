@@ -52,20 +52,21 @@
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="{{ navSetActive('blog.new_post') }}">
-                            <a href="{{ URL::route('blog.new_post') }}">New Post</a>
-                        </li>
-                        <li class="{{ navSetActive('user.logout') }}">
-                            <a href="{{ URL::route('user.logout') }}">Logout</a>
-                        </li>
-                        <li class="{{ navSetActive('user.create') }}">
-                            <a href="{{ URL::route('user.create') }}">Register</a>
-                        </li>
-                        <li class="{{ navSetActive('user.login') }}">
-                            <a href="{{ URL::route('user.login') }}">Login</a>
-                        </li>
-                    </ul>
+                    <?php
+                        if (is_user_logged_in()) {
+                            wp_nav_menu(array(
+                                'theme_location' => 'secondary_logged_in',
+                                'container' => false,
+                                'menu_class' => 'nav navbar-nav navbar-right'
+                            ));
+                        } else {
+                            wp_nav_menu(array(
+                                'theme_location' => 'secondary_logged_out',
+                                'container' => false,
+                                'menu_class' => 'nav navbar-nav navbar-right'
+                            ));
+                        }
+                    ?>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
