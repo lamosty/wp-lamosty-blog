@@ -3,6 +3,10 @@
  * @ WebVision.sk 2014
  */
 
+define('LAMOSTY_THEME_DIR', get_template_directory());
+define('LAMOSTY_LIB_DIR', LAMOSTY_THEME_DIR . '/lib');
+define('LAMOSTY_STRUCTURE_DIR', LAMOSTY_LIB_DIR . '/structure');
+
 function lamosty_setup() {
     load_theme_textdomain('lamosty-blog', get_template_directory() . '/languages');
 
@@ -22,9 +26,15 @@ function lamosty_setup() {
         'width' => 40,
         'height' => 40
     ));
+
+    load_dependencies();
 }
 
 add_action('after_setup_theme', 'lamosty_setup');
+
+function load_dependencies() {
+    require(LAMOSTY_STRUCTURE_DIR . '/loops.php');
+}
 
 function lamosty_format_translated_site_title() {
     $site_title = get_bloginfo('title');
