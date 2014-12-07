@@ -34,6 +34,7 @@ add_action('after_setup_theme', 'lamosty_setup');
 
 function load_dependencies() {
     require(LAMOSTY_STRUCTURE_DIR . '/loops.php');
+    require(LAMOSTY_STRUCTURE_DIR . '/post.php');
 }
 
 function lamosty_format_translated_site_title() {

@@ -3,10 +3,9 @@
  * @ WebVision.sk 2014
  */
 
-function lamosty_do_post_loop()
-{
+function lamosty_do_post_loop() {
     if (have_posts()) :
-        while (have_posts()) {
+        while (have_posts()) :
             the_post();
 ?>
             <article class="blog-post">
@@ -30,12 +29,8 @@ function lamosty_do_post_loop()
 
                 <a href="<?php the_permalink(); ?>">Read More...</a>
             </article><!-- /.blog-post -->
-
-
-
 <?php
-        }
-
+        endwhile;
     endif;
 
 }
