@@ -45,23 +45,15 @@ function lamosty_do_post_func() {
             </ul>
 
             <h4 id="comments-counter">
-                {{{ $comments->count() }}}
-                {{{ \Illuminate\Support\Pluralizer::plural('Comment', $comments->count()) }}}
+                <?php comments_number(); ?>
             </h4>
 
-            @if ($comments->count())
-            <section class="comments" id="comments">
-                @foreach ($comments as $comment)
-                <article class="comment" id="comment-{{ $comment->id }}">
-                    <div class="comment-heading">
-                        <strong>{{{ $comment->author->username }}}</strong> - {{{ $comment->createdAtFormatted() }}}
-                    </div>
-                    <div class="comment-content">
-                        {{ $comment->content() }}
-                    </div>
-                </article>
-                @endforeach
-            </section>
+            <?php
+                if (comments_open() || get_comments_number() != 0) {
+                    comments_template();
+                }
+            ?>
+
             @endif
 
 
