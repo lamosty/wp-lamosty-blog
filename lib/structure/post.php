@@ -61,3 +61,16 @@ function lamosty_do_post_func() {
 }
 
 add_action('lamosty_do_post', 'lamosty_do_post_func');
+
+function lamosty_do_post_pagination() {
+
+    ?>
+
+<div class="pagination">
+    <?php echo paginate_links(); ?>
+</div>
+
+    <?php
+}
+
+add_action('lamosty_post_pagination', 'lamosty_do_post_pagination');
