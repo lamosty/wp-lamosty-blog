@@ -53,18 +53,6 @@ function lamosty_do_post_func() {
                     comments_template();
                 }
             ?>
-
-            @endif
-
-
-            @if (Auth::check())
-            @include('partials.comment-form')
-            @else
-            <p>
-                <a href="{{ URL::route('user.login') }}">Login</a> or
-                <a href="{{ URL::route('user.create') }}">register</a> in order to be able to comment.
-            </p>
-            @endif
         </article><!-- /.blog-post -->
 
     <?php

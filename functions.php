@@ -27,6 +27,10 @@ function lamosty_setup() {
         'height' => 40
     ));
 
+    add_theme_support('html5', array(
+        'comment-form', 'comment-list', 'search-form'
+    ));
+
     load_dependencies();
 }
 
